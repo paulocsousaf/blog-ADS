@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tilt+Neon&display=swap');
+
+
+:root {
+
+    /*CORES*/
+
+    --color-white:          #ffffff;
+    --color-black:          #000000;
+
+    /* Escala de cinza — do mais escuro ao mais claro */
+    --color-gray-900:       rgb(58, 57, 57);    
+    --color-gray-800:       rgb(73, 70, 70);    
+    --color-gray-700:       #313131;            
+    --color-gray-600:       #555555;  
+    --color-gray-500:       #444444;    
+    --color-gray-400:       #666666;          
+    --color-gray-300:       rgb(164, 162, 162); 
+    --color-gray-200:       #aaaaaa;           
+    --color-gray-100:       #888888;          
+
+    /* Cinza semântico (bordas, detalhes de card) */
+    --color-border:         gray;
+    --color-border-dark:    darkslategray;   
+    --color-border-darker:  darkgray;                
+    /* Acentos */
+    --color-accent-orange:  orange;
+    --color-accent-cyan:    #00ffff;
+    --color-accent-cyan-dim: rgb(150, 230, 230); 
+    --color-accent-blue:    blue;               
+
+    /* Cores de link globais */
+    --color-link:           var(--color-accent-cyan);
+    --color-link-hover:     var(--color-accent-cyan-dim);
+
+    /* Cores de link dentro de .card */
+    --color-card-link:      gray;
+    --color-card-link-hover: darkgray;
+
+    /* Texto sobre fundo escuro */
+    --color-nav-link:       gray;
+    --color-nav-link-hover: lightgray;
+
+    /* Cores de destaque  */
+    --color-bm-red:         red;
+    --color-bm-blue:        blue;
+    --color-bm-green:       green;
+    --color-bm-yellow:      yellow;
+    --color-bm-orange:      orange;
+
+    /*ESPAÇAMENTOS  (--space-*) */
+
+    --space-1:   5px;  
+    --space-2:  10px;   
+    --space-3:  15px; 
+    --space-4:  20px;  
+    --space-5:  25px;  
+    --space-6:  30px;  
+    --space-7:  40px;   
+    --space-8:  50px;   
+
+    --space-card-h2-border: 10px;
+
+    --radius-none:   0px;
+    --radius-card:  10px; 
+
+
+    --shadow-card:   5px 5px 15px 5px var(--color-black);
+
+    --shadow-footer: -5px -5px 10px 10px var(--color-gray-700);
+
+    --shadow-none:   0 0 0 0;
+
+    --font-base:       Arial, Helvetica, sans-serif;
+    --font-quicksand: "Quicksand", sans-serif;
+    --font-tilt:      "Tilt Neon", sans-serif;
+
+    --main-width: 90%;
+    --section-flex: 3;
+    --aside-flex:   1;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--color-white);
+    background-image: linear-gradient(
+        to left,
+        var(--color-gray-800),
+        var(--color-gray-300),
+        var(--color-gray-800)
+    );
+    font-family: var(--font-base);
+}
+
+main {
+    margin: auto;
+    width: var(--main-width);
+    display: flex;
+    
+    align-items: flex-start;
+}
+
+section {
+    flex: var(--section-flex);
+    margin-right: var(--space-4);
+}
+.sidebar {
+    position: sticky;
+    top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside {
+    position: static;
+}
+
+.card * {
+    margin-bottom: var(--space-2);
+}
+
+.card {
+    border: 1px dotted var(--color-border);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    margin-bottom: var(--space-7);
+    margin-left: var(--space-4);
+    border-radius: var(--radius-card);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+}
+
+.card a,
+.card a:visited {
+    color: var(--color-card-link);
+}
+
+.card a:hover {
+    color: var(--color-card-link-hover);
+}
+
+.card ul,
+.card ol {
+    list-style-position: outside;
+    padding-left: var(--space-4);
+}
+
+.card h2 {
+    border-bottom: 1px dotted var(--color-border);
+    border-left: var(--space-card-h2-border) solid var(--color-border);
+    margin-bottom: var(--space-2);
+    padding: var(--space-1);
+}
+
+
+header {
+    text-align: center;
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-card);
+}
+
+header h1 {
+    font-size: 5rem;
+    margin-bottom: var(--space-5);
+}
+
+nav {
+    margin: var(--space-4);
+}
+
+nav li {
+    display: inline;
+    margin: var(--space-3);
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: var(--color-nav-link);
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: var(--color-nav-link-hover);
+}
+
+
+footer {
+    margin-top: var(--space-6);
+    background-color: var(--color-black);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-footer);
+}
+
+
+/*LINKS GLOBAIS*/
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+a:active,
+a:focus {
+    color: var(--color-link-hover);
+    text-decoration: none;
+}
+
+
+/*CLASSES UTILITÁRIAS — FONTES*/
+
+.qs-light {
+    font-family: var(--font-quicksand);
+}
+
+.qs-strong {
+    font-family: var(--font-quicksand);
+    font-weight: bolder;
+}
+
+.tilt-light {
+    font-family: var(--font-tilt);
+}
+
+.tilt-italic {
+    font-family: var(--font-tilt);
+    font-style: italic;
+}
+
+h1 {}
+
+
+/* 
+    Classes utilitarias
+ */
+
+.autor-data {
+    text-align: right;
+    color: var(--color-gray-100);
+}
+
+.justificado   { text-align: justify; }
+.direita       { text-align: right; }
+.centralizado  { text-align: center; }
+
+.laranja { color: var(--color-accent-orange); }
+.ciano   { color: var(--color-accent-cyan); }
+.cinza   { color: var(--color-gray-200); }
+
+.entre-linhas  { line-height: 2; }
+.entre-letras  { letter-spacing: var(--space-2); }
+
+.imagem-relativa {
+    width: 50%;
+    height: var(--space-4);
+}
+
+.div1,
+.div2,
+.div3 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-accent-blue);
+    border: 1px solid var(--color-black);
+    display: inline-block;
+}
+
+.div1 {
+    background-image: url("imagens/favicon.ico");
+}
+
+.div2 {
+    background-image: url("imagens/favicon.ico");
+    background-repeat: repeat-x;
+}
+
+.div3 {
+    background-image: url("imagens/favicon.ico");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* 
+   LISTAS — ESTILOS DEMONSTRATIVOS
+*/
+
+.ol-item1 { list-style-type: lower-alpha; }
+.ol-item2 { list-style-type: upper-roman; }
+.ol-item3 { list-style-type: lower-greek; }
+.ol-item4 { list-style-type: decimal-leading-zero; }
+
+.ul-item1 { list-style-type: square; }
+.ul-item2 { list-style-type: circle; }
+.ul-item3 { list-style-type: disc; }
+.ul-item4 { list-style-image: url("imagens/seta1.png"); }
+.ul-item5 { list-style-type: none; }
+
+
+/* 
+   TABELAS
+*/
+
+.tabela1 {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.tabela1 td {
+    border: 1px solid var(--color-border);
+}
+
+
+
+.tabela2 {
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabela2 th {
+    background-color: var(--color-border-dark);
+    color: var(--color-white);
+}
+
+.tabela2 th,
+.tabela2 td {
+    border: 1px solid var(--color-border);
+    padding: var(--space-1);
+}
+
+.tabela2 tr:nth-child(even) {
+    background-color: var(--color-gray-600);
+    color: var(--color-white);
+}
+
+.tabela2 tr:nth-child(odd) {
+    background-color: var(--color-gray-500);
+    color: var(--color-white);
+}
+
+.tabela2 tr:hover {
+    background-color: var(--color-gray-400);
+    color: var(--color-white);
+}
+
+.tabela2 td:first-child {
+    text-align: left;
+}
+
+/* --- tabela3: borda simples --- */
+
+.tabela3 td {
+    border: 1px solid var(--color-border);
+}
+
+
+
+
+#bm-1 {
+    border: 1px solid var(--color-bm-red);
+    margin: 0px 20% var(--space-1) 20%;
+}
+
+#bm-2 {
+    border-top:    1px dotted var(--color-bm-blue);
+    border-right:  1px solid  var(--color-bm-green);
+    border-bottom: 1px dashed var(--color-bm-yellow);
+    border-left:   1px dashed var(--color-bm-red);
+}
+
+#bm-3 {
+    border: 1px solid var(--color-bm-orange);
+    padding: var(--space-2);
+    width: 200px;
+    height: 50px;
+}
+
+
+@media (max-width: 900px) {
+
+    article,
+    section,
+    .card {
+        margin: 0;
+    }
+
+    .card {
+        border-radius: var(--radius-none);
+        box-shadow: var(--shadow-none);
+    }
+
+    main {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+}
